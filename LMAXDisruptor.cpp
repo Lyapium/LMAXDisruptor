@@ -1,4 +1,4 @@
-/*@brief: A simplified implementation (without using locks or CAS atomic operations) 
+/*@brief: A simplified implementation (without using locks) 
 *         of the SPMC LMAX Disruptor design from the paper :
 *         "Disruptor: High performance alternative to bounded queues for exchanging data between concurrent threads" 
 *         by Martin Thompson, Dave Farley, Michael Barker, Patricia Gee, Andrew Stewart.
@@ -139,5 +139,6 @@ int main()
         std::cout << consumer_sequences[i].sequence << " consumed by consumer " << i << "\n";
     }
     std::cout << "time spent: " << dur << " secs\n";
+    std::cout << "size of : : " << sizeof(std::atomic<uint64_t>) << " secs\n";
     //
 }
